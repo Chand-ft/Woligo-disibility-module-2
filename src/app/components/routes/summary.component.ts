@@ -121,7 +121,7 @@ export class summaryComponent {
         },
         {
           category: 'Monthly Gross Income',
-          selected: '$' + page.backendService.summaryForm.grossIncome,
+          selected: '$ ' + page.backendService.summaryForm.grossIncome,
         },
         {
           category: 'Government employee',

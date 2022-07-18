@@ -1,9 +1,9 @@
 <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
   <form [formGroup]="page.jobsCategory" class="fullWidth">
     <mat-radio-group class="fullWidth" formControlName="category" [required]="false">
-      <div fxLayout="column wrap" class="disibilityModuleBodyHeight" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
-        <div fxLayout="row wrap" class="DMHeightWithoutFooter fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
-          <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="categoryBodyHeight" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height: 682px;, overflow-y: auto;" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style=" overflow-y: auto;" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" class="marginTop50 marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
               <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
                 <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
@@ -29,54 +29,65 @@
             <div fxLayout="row wrap" class="marginTop30 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
               <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
                 <div>
-                  <p style=" font-weight: 500; font-size: 24px; line-height: 31px; text-align: center; color: #000000;">How would you categorize your current job?</p>
+                  <p style=" font-weight: 500; font-size: 24px; line-height: 31px; text-align: center; color: #000000;">How would you categorize your current job? *</p>
                 </div>
               </div>
             </div>
-            <div fxLayout="row wrap" style="height: 350px;" class="marginBottom20 marginTop20 fullWidth" fxLayoutAlign="center center" [fxShow]="true">
-              <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true" (click)="toggleDisabilityInsuranceImage()"><img imgSrc="/Web/Downloaded images/professional.png" class="fitContent"><img imgSrc="/Web/Downloaded images/colourProfessional.png" class="fitContent"></div>
-                <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
-                  <div>
+            <div fxLayout="row wrap" style="height: 250px;" class="marginBottom20 marginTop20 fullWidth" fxLayoutAlign="center start" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="210px" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="row wrap" style="height: 60px;" class="marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/professional.png" *ngIf="!page.professionalSelected" class="fitContent"><img imgSrc="/Web/Downloaded images/colourProfessional.png" *ngIf="page.professionalSelected" class="fitContent"></div>
+                <div fxLayout="row wrap" class="heightForTextCatagory" fxLayoutAlign="center start" [fxShow]="true">
+                  <div style="text-align: center;">
                     <p style="color: #B9B9C3"><span style="color: #5E5873">Professional</span><br>Office job with few hazards.<br>Examples: Accountant, <br>Pharmacist, Software <br>Engineer</p>
                   </div>
                 </div>
-                <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true" (click)="toggleDisabilityInsuranceImage()">
-                  <mat-radio-button [required]="false" value="Professional"></mat-radio-button>
+                <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-radio-button [required]="false" value="Professional" (change)="professionalSelected()"></mat-radio-button>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/tooth.png" class="fitContent"></div>
-                <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
-                  <div>
+              <div fxLayout="column wrap" fxFlex="210px" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="row wrap" style="height: 60px;" class="marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/tooth.png" class="fitContent"></div>
+                <div fxLayout="row wrap" class="heightForTextCatagory" fxLayoutAlign="center start" [fxShow]="true">
+                  <div style="text-align: center;">
                     <p style="color: #B9B9C3"><span style="color: #5E5873">Technical</span><br>Similar to professional, but<br>with some hazards.<br>Examples: Salesperson, <br>Dental Hygienist, Lab Tech</p>
                   </div>
                 </div>
                 <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <mat-radio-button [required]="false" value="Technical"></mat-radio-button>
+                  <mat-radio-button [required]="false" value="Technical" (change)="tehnicalSelected()"></mat-radio-button>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/gear.png" class="fitContent"></div>
-                <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
-                  <div>
+              <div fxLayout="column wrap" fxFlex="210px" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="row wrap" style="height: 60px;" class="marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/gear.png" class="fitContent"></div>
+                <div fxLayout="row wrap" class="heightForTextCatagory" fxLayoutAlign="center start" [fxShow]="true">
+                  <div style="text-align: center;">
                     <p style="color: #B9B9C3"><span style="color: #5E5873">Light Labor</span><br>Skilled / manual jobs<br>Examples: Auto Mechanic,<br>Carpenter, Landscaper</p>
                   </div>
                 </div>
                 <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <mat-radio-button [required]="false" value="Light Labor"></mat-radio-button>
+                  <mat-radio-button [required]="false" value="Light Labor" (change)="lightLaborSelected()"></mat-radio-button>
                 </div>
               </div>
-              <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
-                <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/driver.png" class="fitContent"></div>
-                <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="center center" [fxShow]="true">
-                  <div>
+              <div fxLayout="column wrap" fxFlex="210px" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="row wrap" style="height: 60px;" class="marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/driver.png" class="fitContent"></div>
+                <div fxLayout="row wrap" class="heightForTextCatagory" fxLayoutAlign="center start" [fxShow]="true">
+                  <div style="text-align: center;">
                     <p style="color: #B9B9C3"><span style="color: #5E5873">Labor</span><br>Heavier or skilled manual<br>labor jobs with more hazards.<br>Examples: Rideshare Driver,<br>Roofer</p>
                   </div>
                 </div>
                 <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
-                  <mat-radio-button [required]="false" value="Labor"></mat-radio-button>
+                  <mat-radio-button [required]="false" value="Labor" (change)="labourSelected()"></mat-radio-button>
                 </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="height:90px" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true" *ngIf="page.showJobInput">
+                <div>
+                  <p style=" font-weight: 500; font-size: 24px; line-height: 31px; text-align: center; color: #000000;">What is your current job title? *</p>
+                </div>
+                <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput placeholder="Enter the job title" [required]="false" formControlName="jobInput">
+
+                </mat-form-field>
               </div>
             </div>
             <div fxLayout="row wrap" class="marginTop50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
@@ -101,7 +112,7 @@
                 <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-module/date">&#x2190; Back</button></div>
               </div>
               <div fxLayout="column wrap" class="marginRight35 footerNextButton" fxLayoutAlign="center center" [fxShow]="true">
-                <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button [disabled]="!page.disabilityInsuranceSelected" routerLink="/home/disibility-module/gender">Next &#x2192;</button></div>
+                <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="logForm()" [disabled]="page.jobsCategory.invalid" routerLink="/home/disibility-module/full-time">Next &#x2192;</button></div>
               </div>
             </div>
           </div>
