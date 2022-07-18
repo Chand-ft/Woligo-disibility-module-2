@@ -69,8 +69,8 @@
               <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
                 <div class="summaryMarginLeft">
                   <p *ngIf="item.category !== &apos;Date of birth&apos;" class="blueText">{{item.selected}}</p>
-                  <p *ngIf="item.category == &apos;Date of birth&apos;" class="blueText"> {{item.selected | date:&apos;shortDate&apos;}}</p>
-
+                  <!-- <p *ngIf="item.category == 'Date of birth'" class="blueText"> {{item.selected | date:'shortDate'}}</p> -->
+                  <p *ngIf="item.category == &apos;Date of birth&apos;" class="blueText"> {{item.selected | date: &apos;dd/MM/yyyy&apos;}}</p>
                 </div><img imgSrc="/Web/Downloaded images/edit.png">
               </div>
             </div>

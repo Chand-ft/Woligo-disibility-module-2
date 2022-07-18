@@ -54,8 +54,8 @@
                 <p class="bodyText">I need to protect my income or family</p>
               </div>
             </div>
-            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true" (click)="toggleFamilyImage()">
-              <mat-checkbox (change)="openDialog()" [required]="false"></mat-checkbox>
+            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-checkbox (change)="toggleFamilyImage()" [required]="false"></mat-checkbox>
             </div>
           </div>
           <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">

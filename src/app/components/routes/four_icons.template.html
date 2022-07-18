@@ -54,8 +54,8 @@
                 <p class="bodyText">Disability Insurance</p>
               </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
             </div>
-            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true" (click)="toggleDisabilityInsuranceImage()">
-              <mat-checkbox (change)="openDialog()" [required]="false"></mat-checkbox>
+            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-checkbox (change)="toggleDisabilityInsuranceImage()" [required]="false"></mat-checkbox>
             </div>
           </div>
           <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">

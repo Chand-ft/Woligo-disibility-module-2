@@ -134,8 +134,14 @@ export class four_iconsComponent {
 
   sd_VVV52rxoz4BtSh3w(bh) {
     try {
-      const page = this.page;
-      page.disabilityInsuranceSelected = !page.disabilityInsuranceSelected;
+      const page = this.page; // page.disabilityInsuranceSelected = !page.disabilityInsuranceSelected;
+
+      if (page.disabilityInsuranceSelected == true) {
+        page.disabilityInsuranceSelected = false;
+      } else {
+        page.disabilityInsuranceSelected = true;
+        this.openDialog();
+      }
 
       //appendnew_next_sd_VVV52rxoz4BtSh3w
       return bh;

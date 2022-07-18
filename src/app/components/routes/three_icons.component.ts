@@ -132,9 +132,14 @@ export class three_iconsComponent {
 
   sd_jPb3w1v0J7URJwMp(bh) {
     try {
-      const page = this.page;
-      page.familySelected = !page.familySelected;
+      const page = this.page; // page.familySelected = !page.familySelected;
 
+      if (page.familySelected == true) {
+        page.familySelected = false;
+      } else {
+        page.familySelected = true;
+        this.openDialog();
+      }
       //appendnew_next_sd_jPb3w1v0J7URJwMp
       return bh;
     } catch (e) {

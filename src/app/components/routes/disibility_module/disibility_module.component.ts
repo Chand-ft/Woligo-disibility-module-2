@@ -12,6 +12,7 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { disclaimer_dialogComponent } from '../../extras/disclaimer_dialog.component'; //_splitter_
 //append_imports_end
@@ -80,10 +81,22 @@ export class disibility_moduleComponent {
 
   sd_gPYxIqFzjkQTzkKv(bh) {
     try {
+      this.page.router = undefined;
+      bh = this.sd_uKNcT22X4Cev4VDe(bh);
       //appendnew_next_sd_gPYxIqFzjkQTzkKv
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_gPYxIqFzjkQTzkKv');
+    }
+  }
+
+  sd_uKNcT22X4Cev4VDe(bh) {
+    try {
+      this.page.router = this.__page_injector__.get(Router);
+      //appendnew_next_sd_uKNcT22X4Cev4VDe
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uKNcT22X4Cev4VDe');
     }
   }
 

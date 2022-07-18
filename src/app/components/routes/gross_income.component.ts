@@ -128,7 +128,7 @@ export class gross_incomeComponent {
         grossIncome: new FormControl('', [
           Validators.required,
           Validators.min(1200),
-          Validators.pattern('[0-9 ]*'),
+          Validators.pattern('^[0-9]*$'),
         ]),
       });
 
