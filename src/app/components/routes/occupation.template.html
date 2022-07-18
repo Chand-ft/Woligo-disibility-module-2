@@ -1,0 +1,98 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <form [formGroup]="page.selectOccupationForm" class="fullWidth">
+    <div fxLayout="column wrap" class="disibilityModuleBodyHeight" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="DMHeightWithoutFooter fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginTop50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+              <div>
+                <p style="font-size: 16px; font-weight: 400; color: #BABFC7; line-height: 20.8px;">Selected Plan</p>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
+                <div>
+                  <p style="font-weight: 500; font-size: 24px; line-height: 31.2px;">Disability Insurance</p>
+                </div><img imgSrc="/Web/Downloaded images/orangeEdit.png">
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="marginBottom20 marginTop20" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+                <div fxLayout="column wrap" class="circle1" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    1</div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLine" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    2</div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" style="height:225.98px" class="marginTop30 marginBottom50 fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    <p class="datePickerText">What is your occupation?</p>
+                  </div>
+                  <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                    <mat-select formControlName="occupation" placeholder="Select your occupation" [required]="false">
+                      <ng-template ngFor let-option [ngForOf]="page.occupationOptions" let-i="index">
+                        <mat-option [value]="option.name">{{option.name}}</mat-option>
+                      </ng-template>
+                    </mat-select>
+                    <mat-error align="start" *ngIf="page.selectOccupationForm.invalid">This field needs to be filled before you can proceed</mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start end" [fxShow]="true">
+                  <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true" routerLink="/home/disibility-module/job-category">
+                    <mat-icon class="cantFindOccupationIcon" color="#1273A2">help_outline</mat-icon>
+                    <div>
+                      <p style="font-size: 17px; font-weight: 500; line-height: 20.8px;">Can&apos;t find your occupation</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+              <div>
+                <p style="font-weight: 500; font-size: 18px; line-height: 23.4px;">Not sure?</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+                <div>
+                  <p style="font-size: 16px; font-weight: 500; color: #1273A2; line-height: 20.8px;">I need advice</p>
+                </div>
+                <mat-icon class="iNeedAdviceIcon" color="#1273A2">help_outline</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="footer footerHeight fullWidth" fxLayoutAlign="end center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center end" [fxShow]="true">
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="20px" fxLayoutAlign="end center" [fxShow]="true">
+            <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-module/province">&#x2190; Back</button></div>
+            </div>
+            <div fxLayout="column wrap" class="marginRight35 footerNextButton" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="logForm()" [disabled]="page.selectOccupationForm.invalid" routerLink="/home/disibility-module/full-time">Next &#x2192;</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

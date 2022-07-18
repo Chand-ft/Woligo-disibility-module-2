@@ -1,0 +1,190 @@
+<div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+    <mat-horizontal-stepper [linear]="true">
+      <mat-step label="Basic Details">
+        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginBottom20 fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start start" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  <p class="welcomeToWoligoText">Welcome to Woligo!</p>
+                </div><img imgSrc="/Web/Downloaded images/wave.png" width="20px">
+              </div>
+              <div>
+                <p class="provideYourInformationToRegisterText">Please provide your information to register your account</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <form>
+                <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    <p class="inputMessageText">Email ( Recovery email address ) <span style="color: red">*</span></p>
+                  </div>
+                  <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="e.g johnsmith@gmail.com" [required]="false">
+
+                  </mat-form-field>
+                  <div>
+                    <p class="inputMessageText">This will be used to reset password</p>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div>
+                        <p class="inputMessageText">First Name <span style="color: red">*</span></p>
+                      </div>
+                      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Enter Name" [required]="false">
+
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div>
+                        <p class="inputMessageText">Last Name <span style="color: red">*</span></p>
+                      </div>
+                      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Enter Name" [required]="false">
+
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div>
+                        <p class="inputMessageText">Gender at birth *</p>
+                      </div>
+                      <div fxLayout="row wrap" class="genderBoarder" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+                        <mat-radio-button [required]="false"></mat-radio-button><img imgSrc="/Web/Downloaded images/Male.png">
+                        <div>
+                          <p class="genderText">Male</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="end stretch" [fxShow]="true">
+                      <div fxLayout="row wrap" class="genderBoarder" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+                        <mat-radio-button [required]="false"></mat-radio-button><img imgSrc="/Web/Downloaded images/Female.png">
+                        <div>
+                          <p class="genderText">Female</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div>
+                        <p class="inputMessageText">Date of Birth <span style="color: red">*</span></p>
+                      </div>
+                      <mat-form-field class="width204px" [appearance]="&apos;outline&apos;">
+                        <input matInput placeholder="mm/dd/yyyy" [matDatepicker]="picker" [required]="false" [disabled]="true">
+                        <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+                        <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div>
+                        <p class="inputMessageText">State <span style="color: red">*</span></p>
+                      </div>
+                      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-select placeholder="Select" [required]="false">
+                          <mat-option [value]="&apos;westernCape&apos;" disabled="false">Western Cape</mat-option>
+                          <mat-option [value]="&apos;mpumalanga&apos;" disabled="false">Mpumalanga</mat-option>
+                          <mat-option [value]="&apos;northWest&apos;" disabled="false">North West</mat-option>
+                          <mat-option [value]="&apos;freeState&apos;" disabled="false">Free State</mat-option>
+                          <mat-option [value]="&apos;northernCape&apos;" disabled="false">Northern Cape</mat-option>
+                          <mat-option [value]="&apos;limpopo&apos;" disabled="false">Limpopo</mat-option>
+                          <mat-option [value]="&apos;easternCape&apos;" disabled="false">Eastern Cape</mat-option>
+                          <mat-option [value]="&apos;gauteng&apos;" disabled="false">Gauteng</mat-option>
+                          <mat-option [value]="&apos;kzn&apos;" disabled="false">Kwazulu-Natal</mat-option>
+                        </mat-select>
+
+                      </mat-form-field>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="center stretch" [fxShow]="true">
+                <div>
+                  <p class="alreadyHaveAnAccountText">Already have an account?</p>
+                </div>
+                <div>
+                  <p class="loginText">Login</p>
+                </div>
+              </div>
+              <div fxLayout="row wrap" class="marginTop20" fxLayoutAlign="center center" [fxShow]="true"><button mat-button class="nextButton">Next &#x2192;</button></div>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+      <mat-step label="Password Setup">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginBottom20 fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start start" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  <p class="welcomeToWoligoText">Welcome to Woligo!</p>
+                </div><img imgSrc="/Web/Downloaded images/wave.png" width="20px">
+              </div>
+              <div>
+                <p class="provideYourInformationToRegisterText">Please enter your credentials to access your account.</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <p class="inputMessageText">Username</p>
+            </div>
+            <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="e.g johnsmith@gmail.com" [required]="false">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+              <div>
+                <p class="inputMessageText">Password</p>
+              </div>
+              <div>
+                <p class="inputMessageText"><span style="color: #0D6EFD">Forgot Password?</span></p>
+              </div>
+            </div>
+            <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Password" [required]="false">
+
+            </mat-form-field>
+            <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+              <mat-checkbox [required]="false"></mat-checkbox>
+              <div>
+                <p class="inputMessageText">Remember information</p>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" class="marginBottom20 marginTop20" fxLayoutAlign="center center" [fxShow]="true"><button mat-button class="nextButton">Login &#x2192;</button></div>
+              <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="center stretch" [fxShow]="true">
+                <div>
+                  <p class="alreadyHaveAnAccountText">New to Woligo?</p>
+                </div>
+                <div>
+                  <p class="loginText">Create an Account</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </div>
+</div>

@@ -1,0 +1,133 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <form [formGroup]="page.genderForm" class="fullWidth">
+    <div fxLayout="column wrap" class="disibilityModuleBodyHeight" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="DMHeightWithoutFooter fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginTop50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+              <div>
+                <p style="font-size: 16px; font-weight: 400; color: #BABFC7; line-height: 20.8px;">Selected Plan</p>
+              </div>
+              <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="15px" fxLayoutAlign="center center" [fxShow]="true">
+                <div>
+                  <p style="font-weight: 500; font-size: 24px; line-height: 31.2px;">Disability Insurance</p>
+                </div><img imgSrc="/Web/Downloaded images/orangeEdit.png">
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="marginBottom20 marginTop20" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+                <div fxLayout="column wrap" class="circle1" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    1</div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLine" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    2</div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" style="height:225.98px" class="marginTop30 marginBottom50 fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-radio-group formControlName="gender" [required]="false">
+                <div fxLayout="row wrap" class="marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                    <div class="marginBottom50">
+                      <p class="datePickerText">What was your gender at birth?</p>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutGap="50px" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/Male.png" style="height: 58.4px;" *ngIf="!page.selectedMale"><img imgSrc="/Web/Downloaded images/orangeMale.png" style="height: 58.4px;" *ngIf="page.selectedMale"></div>
+                        <div *ngIf="page.selectedMale">
+                          <p style="color: #DD601E;">Male</p>
+                        </div>
+                        <div *ngIf="!page.selectedMale">
+                          <p>Male</p>
+                        </div>
+                        <mat-radio-button [required]="false" value="Male" (change)="selectMale()"></mat-radio-button>
+                      </div>
+                      <div fxLayout="column wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/Female.png" style="height: 58.4px;" *ngIf="!page.selectedFemale"><img imgSrc="/Web/Downloaded images/orangeFemale.png" style="height: 58.4px;" *ngIf="page.selectedFemale"></div>
+                        <div *ngIf="page.selectedFemale">
+                          <p style="color: #DD601E;">Female</p>
+                        </div>
+                        <div *ngIf="!page.selectedFemale">
+                          <p>Female</p>
+                        </div>
+                        <mat-radio-button [required]="false" value="Female" (change)="selectFemale()"></mat-radio-button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-radio-group>
+              <mat-radio-group formControlName="maternity" [required]="false">
+                <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.selectedFemale">
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                    <div>
+                      <p class="datePickerText">Are you looking maternity coverage?</p>
+                    </div>
+                    <div fxLayout="row wrap" fxLayoutGap="50px" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+                        <div *ngIf="page.selectedYes">
+                          <p style="color: #DD601E;">Yes</p>
+                        </div>
+                        <div *ngIf="!page.selectedYes">
+                          <p>Yes</p>
+                        </div>
+                        <mat-radio-button [required]="false" value="Yes" (change)="selectYes()"></mat-radio-button>
+                      </div>
+                      <div fxLayout="column wrap" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+                        <div *ngIf="page.selectedNo">
+                          <p style="color: #DD601E;">No</p>
+                        </div>
+                        <div *ngIf="!page.selectedNo">
+                          <p>No</p>
+                        </div>
+                        <mat-radio-button [required]="false" value="No" (change)="selectNo()" [checked]="true"></mat-radio-button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </mat-radio-group>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="marginTop50 marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+              <div>
+                <p style="font-weight: 500; font-size: 18px; line-height: 23.4px;">Not sure?</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+                <div>
+                  <p style="font-size: 16px; font-weight: 500; color: #1273A2; line-height: 20.8px;">I need advice</p>
+                </div>
+                <mat-icon class="iNeedAdviceIcon" color="#1273A2">help_outline</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="footer footerHeight fullWidth" fxLayoutAlign="end center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center end" [fxShow]="true">
+          <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="20px" fxLayoutAlign="end center" [fxShow]="true">
+            <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-module/date">&#x2190; Back</button></div>
+            </div>
+            <div fxLayout="column wrap" class="marginRight35 footerNextButton" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button (click)="logForm()" [disabled]="page.genderForm.invalid" routerLink="/home/disibility-module/female-eligibility">Next &#x2192;</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

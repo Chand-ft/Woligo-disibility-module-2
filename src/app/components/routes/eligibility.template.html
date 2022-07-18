@@ -1,0 +1,172 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" class="disibilityModuleBodyHeight" fxFlex="100" fxLayoutAlign="space-between stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="DMHeightWithoutFooter fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="marginTop50 marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="column wrap" class="circle1" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  1</div>
+              </div>
+              <div fxLayout="column wrap" class="paddingForHorizontalLine" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  2</div>
+              </div>
+              <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="paddingForHorizontalLineTwo" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="circle2" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div>
+                  3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="marginTop30 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+            <div>
+              <p style=" font-weight: 500; font-size: 24px; line-height: 31px; text-align: center; color: #000000;">Unfortunately, you are not eligible for the selected plan coverage.
+                Not to worry, we have other solutions that may work for you!</p>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="disibilityChildCom fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true" (click)="toggleDisabilityInsuranceImage()"><img imgSrc="/Web/Downloaded images/disabilityInsure.png" *ngIf="!page.disabilityInsuranceSelected" class="fitContent"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                <div>
+                  <p class="bodyText">Disability insurance</p>
+                </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/redCircle.png" class="fitContent">
+                <div>
+                  <p class="bodyText">Not Eligible</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/crash.png" class="fitContent"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                <div>
+                  <p class="bodyText">Accident insurance</p>
+                </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/redCircle.png" class="fitContent">
+                <div>
+                  <p class="bodyText">Not Eligible</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/lifeInsurance.png" class="fitContent"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                <div>
+                  <p class="bodyText">Life insurance</p>
+                </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+              </div>
+              <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/redCircle.png" class="fitContent">
+                <div>
+                  <p class="bodyText">Not Eligible</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="disibilityChildCom fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/discountPlans.png" class="fitContent"></div>
+            <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div>
+                    <p class="bodyText">Discount Plans</p>
+                  </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+                </div>
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/greenCircle.png" class="fitContent">
+                  <div>
+                    <p class="bodyText">Eligible</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-checkbox [required]="false"></mat-checkbox>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/health.png" class="fitContent"></div>
+            <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div>
+                    <p class="bodyText">Health Insurance</p>
+                  </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+                </div>
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/greenCircle.png" class="fitContent">
+                  <div>
+                    <p class="bodyText">Eligible</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-checkbox [required]="false"></mat-checkbox>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxFlex="181px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="row wrap" style="height: 60px;" class="marginTop20 marginBottom20" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/business.png" class="fitContent"></div>
+            <div fxLayout="row wrap" style="height: 40px;" class="marginBottom20" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                  <div>
+                    <p class="bodyText">Business Insurance</p>
+                  </div><img imgSrc="/Web/Downloaded images/greyHelpCircle.png" class="fitContent">
+                </div>
+                <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/greenCircle.png" class="fitContent">
+                  <div>
+                    <p class="bodyText">Eligible</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" style="height: 20px;" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-checkbox [required]="false"></mat-checkbox>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="marginTop50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+            <div>
+              <p style="font-weight: 500; font-size: 18px; line-height: 23.4px;">Not sure?</p>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div>
+                <p style="font-size: 16px; font-weight: 500; color: #1273A2; line-height: 20.8px;">I need advice</p>
+              </div>
+              <mat-icon class="iNeedAdviceIcon" color="#1273A2">help_outline</mat-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="footer footerHeight fullWidth" fxLayoutAlign="end center" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center end" [fxShow]="true">
+        <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="20px" fxLayoutAlign="end center" [fxShow]="true">
+          <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-module/date">&#x2190; Back</button></div>
+          </div>
+          <div fxLayout="column wrap" class="marginRight35 footerNextButton" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button [disabled]="!page.disabilityInsuranceSelected" routerLink="/home/disibility-module/gender">Next &#x2192;</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

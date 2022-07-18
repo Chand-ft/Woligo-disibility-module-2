@@ -1,0 +1,21 @@
+<div fxLayout="column wrap" class="dialogBoxwidth" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="dialogBoxHeading" fxLayoutAlign="start center" [fxShow]="true">
+    <div style="margin-left:24px">
+      <p style=" font-weight: 500; font-size: 18px; line-height: 23px; color: #5E5873;">Disclaimer</p>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="dialogBoxBody" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="marginBottom10" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div>
+          <p style="font-weight: 400; font-size: 16px; line-height: 21px; display: flex; align-items: center; color: #6E6B7B;">Woligo is the marketing name of CamSolutions, LLC, an Oklahoma corporation. CamSolutions, LLC is a licensed independent insurance broker. CamSolutions, LLC operates in California as Woligo Insurance Solutions with the California license number (6002977) and is also licensed in Oklahoma (30009078&#x200A;1), Arizona (3000982823), and Texas (2572693). Other state insurance license numbers available on request. CamSolutions, LLC does not underwrite any insurance product or program described on this website. CamSolutions, LLC is not a bank or provider of any of the products or services described on this website and each of the providers of the products and services is solely responsible for the quality and delivery of those products and services. We use our best efforts to ensure that the information provided on this website is accurate but the final cost and terms of service are determined solely by the provider of each product or service. CamSolutions, LLC receives compensation from the providers of the products and services.
+
+            Woligo does not process payments directly. When you purchase products and services through our website, you will be billed by one or more of our business partners. Examples of companies that may bill you include Business Management Pro (BMP) or Assurity. If you have any questions or concerns about your billing, please contact us for assistance.
+
+            Any product or insurance premium rate quotes provided to you through this website are for estimate purposes only. Any rate quotes provided herein should not be construed as an offer of insurance, nor is any contract, coverage, or agreement implied, formed, or bound by the provision of any quote. The insurance rate quotes provided are based on general assumptions that may or may not be applicable to you and are subject to change at any time. Ultimate decisions regarding the provision of coverage, underwriting, and pricing of policies will be made by the issuing carrier upon application.</p>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="footer" fxLayoutAlign="end center" [fxShow]="true"><button mat-button class="dialogOkayBtn" (click)="closeDisclaimer()" [disabled]="page.loginForm.invalid">Okay</button></div>
+    </div>
+  </div>
+</div>

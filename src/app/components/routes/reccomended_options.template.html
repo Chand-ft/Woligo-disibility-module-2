@@ -1,0 +1,219 @@
+<div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="whiteBackgroundForDisibilityInsurance" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="navBar fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="center stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="column wrap" class="navBarItems" fxFlex="30" fxLayoutAlign="center start" [fxShow]="true" fxHide.xs="true">
+                <mat-icon style="color: white;">home</mat-icon>
+              </div>
+              <div fxLayout="column wrap" class="navBarItems" fxFlex="30" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Icons/Picture 1.png" width="250px"></div>
+              <div fxLayout="column wrap" class="navBarItems" fxFlex="30" fxLayoutAlign="center stretch" [fxShow]="true" fxHide.xs="true">
+                <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="space-between center" [fxShow]="true">
+                  <div fxLayout="column wrap" fxFlex="30" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/reload.png"></div>
+                  <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+                    <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="space-between center" [fxShow]="true">
+                      <div>
+                        <p class="disibilityNavText">John Smith</p>
+                      </div>
+                      <div class="disibilityNavInitialsBackground">
+                        <p class="disibilityNavInitialsLetters">JS</p>
+                      </div>
+                      <mat-icon class="dropDownIcons">arrow_drop_down</mat-icon>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="recommendedOptionsScroll fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center stretch" [fxShow]="true">
+                <div fxLayout="row wrap" class="marginTop100 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                    <div>
+                      <p class="summaryText">Recommended Options for Disability Insurance</p>
+                    </div>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="50px" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" class="greyBox marginBottom50 width292px marginBottom20 marginTop20" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let item of page.optionsArray ; let i = index;" [ngClass]="{&apos;orangeBox&apos;:i == page.selectedIndex}">
+                    <div fxLayout="row wrap" class="marginTop30 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="reccomendedOptionsBoxHeading">{{item.heading}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                          <div class="dollarSignDiv">
+                            <p class="dollarSign">$</p>
+                          </div>
+                          <div>
+                            <p><span class="numberAmount">{{item.monthlyCost}}</span><span class="monthlyCost">/ monthly cost</span></p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" class="marginBottom20" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="reccomendedOptionsSmallText">Monthly Benefit Amount: {{item.paragraph.monthlyBenefitAmount}}<br>Benefit Period: {{item.paragraph.benefitPeriod}}<br>Elimination Period: {{item.paragraph.eliminationPeriod}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop10 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+                          <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+                            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button class="selectedButton" [ngClass]="{&apos;summaryCheckMyPriceButton&apos;: i == page.selectedIndex}" (click)="buttonToggle(i)">{{ (i == page.selectedIndex) ? &apos;Selected&apos; : item.paragraph.button}}</button></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginBottom20 marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutGap="1" fxLayoutAlign="center center" [fxShow]="true">
+                          <div>
+                            <p class="reccomendedOptionsorangeText">Customize</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center stretch" [fxShow]="true">
+                <div fxLayout="row wrap" class="marginTop50 marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                    <div>
+                      <p class="summaryText">Other products to consider</p>
+                    </div>
+                  </div>
+                </div>
+                <div fxLayout="row wrap" class="fullWidth" fxLayoutGap="20px" fxLayoutAlign="center stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" class="greyBox width292px marginTop20" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let item of page.discountPlansArray" [ngClass]="{&apos;orangeBox&apos;:page.checked}">
+                    <div fxLayout="row wrap" class="marginTop30 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="reccomendedOptionsBoxHeading">{{item.heading}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxFlex="75" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="lightGreyText">{{item.lightGreyText}}</p>
+                          <p class="smallBlueText">{{item.blueText}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" class="marginBottom20" fxFlex="80" fxLayoutAlign="center start" [fxShow]="true">
+                        <div fxLayout="row wrap" class="fullWidth marginBottom10" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let i of item.paragraph"><img imgSrc="/Web/Downloaded images/dot.png">
+                          <div class="width85">
+                            <p class="darkGreyListItems">{{i.text}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginBottom30 fullWidth" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
+                      <mat-checkbox (change)="checkButton()" [required]="false"></mat-checkbox>
+                      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p><span class="orangeAmount">{{item.perMonth}}</span><span class="otherGreyText">/month</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div fxLayout="column wrap" class="greyBox width292px marginTop20" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let item of page.safeguardArray" [ngClass]="{&apos;orangeBox&apos;:page.radioBtnSelected}">
+                    <div fxLayout="row wrap" class="marginTop30 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxFlex="60" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="reccomendedOptionsBoxHeading">{{item.heading}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" fxFlex="75" fxLayoutAlign="start center" [fxShow]="true">
+                        <div>
+                          <p class="smallBlueText">{{item.blueText}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginTop20 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+                      <div fxLayout="column wrap" class="marginBottom20" fxFlex="75" fxLayoutAlign="center start" [fxShow]="true">
+                        <div fxLayout="row wrap" class="fullWidth marginBottom10" fxLayoutGap="10px" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let i of item.paragraph"><img imgSrc="/Web/Downloaded images/dot.png">
+                          <div class="width85">
+                            <p class="darkGreyListItems">{{i.text}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginBottom10 fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
+                          <mat-radio-button [required]="false" (change)="radioButton()"></mat-radio-button>
+                          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                            <div>
+                              <p><span class="orangeAmount">{{item.perPerson}}</span><span class="otherGreyText">/month</span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <p class="perPersonText">Per Person</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div fxLayout="row wrap" class="marginBottom10 fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+                      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="center center" [fxShow]="true">
+                          <mat-radio-button [required]="false" (change)="radioButton()"></mat-radio-button>
+                          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+                            <div>
+                              <p><span class="orangeAmount">{{item.perFamily}}</span><span class="otherGreyText">/month</span></p>
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          <p class="perPersonText">Per Family</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" class="marginTop50" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" class="footer" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="footerHeight marginRight35" fxLayoutGap="20px" fxLayoutAlign="end center" [fxShow]="true">
+              <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/summary">&#x2190; Back</button></div>
+              </div>
+              <div fxLayout="column wrap" class="summaryCheckMyPriceButton" fxLayoutAlign="center center" [fxShow]="true">
+                <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-insurance">Review &#x2192;</button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap" class="marginTop20" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div>
+          <p class="disclaimerheading">Disclaimer</p><br>
+          <p class="disclaimerText">Woligo is the marketing name of CamSolutions, LLC, an Oklahoma corporation. CamSolutions, LLC is a licensed independent insurance broker. CamSolutions, LLC operates in California as Woligo Insurance Solutions with the California license number (6002977) and is also licensed in Oklahoma (30009078&#x200A;1), Arizona (3000982823), and Texas (2572693). Other state insurance license numbers available on request. <span style="color: #1273A2">Read More</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

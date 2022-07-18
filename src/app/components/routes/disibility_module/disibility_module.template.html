@@ -1,0 +1,42 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="whiteBackgroundForDisibilityInsurance" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="navBar fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="center stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+                <div fxLayout="column wrap" class="navBarItems-xs" fxLayoutAlign="center start" [fxShow]="false" fxShow.xs="true">
+                  <mat-icon>menu</mat-icon>
+                </div>
+                <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center start" [fxShow]="true" fxHide.xs="true">
+                  <mat-icon style="color: white;">home</mat-icon>
+                </div>
+                <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Icons/Picture 1.png" width="250px"></div>
+                <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center end" [fxShow]="true" fxHide.xs="true">
+                  <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/reload.png"></div>
+                    <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+                      <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/login.png" style="margin-left: 10px"><button mat-button>Login or Register</button></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="row wrap" class="disibilityModule fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="marginTop20" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <p class="disclaimerheading">Disclaimer</p><br>
+            <p class="disclaimerText">Woligo is the marketing name of CamSolutions, LLC, an Oklahoma corporation. CamSolutions, LLC is a licensed independent insurance broker. CamSolutions, LLC operates in California as Woligo Insurance Solutions with the California license number (6002977) and is also licensed in Oklahoma (30009078&#x200A;1), Arizona (3000982823), and Texas (2572693). Other state insurance license numbers available on request. <span style="color: #1273A2" (click)="openDisclaimer()">Read More</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

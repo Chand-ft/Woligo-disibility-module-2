@@ -1,0 +1,94 @@
+<div fxLayout="column wrap" class="whiteBackgroundForSummary" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="navBar fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" class="navBarItems-xs" fxLayoutAlign="center start" [fxShow]="false" fxShow.xs="true">
+          <mat-icon>menu</mat-icon>
+        </div>
+        <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center start" [fxShow]="true" fxHide.xs="true">
+          <mat-icon style="color: white;">home</mat-icon>
+        </div>
+        <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Icons/Picture 1.png" width="250px"></div>
+        <div fxLayout="column wrap" class="navBarItems" fxLayoutAlign="center end" [fxShow]="true" fxHide.xs="true">
+          <div fxLayout="row wrap" fxLayoutGap="20px" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Downloaded images/reload.png"></div>
+            <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="/Web/Downloaded images/login.png" style="margin-left: 10px"><button mat-button>Login or Register</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="summaryScroll fullWidth" fxLayoutAlign="center start" [fxShow]="true">
+    <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="marginTop50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="marginBottom20" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true">
+                <div fxLayout="column wrap" class="greenCircle" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    <mat-icon>done</mat-icon>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineThree" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineThree" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="greenCircle" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    <mat-icon>done</mat-icon>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLineThree" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="paddingForHorizontalLine" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+                <div fxLayout="column wrap" class="circle1" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div>
+                    3</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="marginTop50 marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+          <div>
+            <p class="summaryText">Summary</p>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="80" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="whiteBoxForSummary fullWidth" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let item of page.items">
+            <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div class="summaryMarginRight">
+                <p class="greyText">{{item.category}}</p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true">
+                <div class="summaryMarginLeft">
+                  <p *ngIf="item.category !== &apos;Date of birth&apos;" class="blueText">{{item.selected}}</p>
+                  <p *ngIf="item.category == &apos;Date of birth&apos;" class="blueText"> {{item.selected | date:&apos;shortDate&apos;}}</p>
+                  <!-- <p *ngIf="item.category == 'Monthly Gross Income'" class="blueText">$ {{item.selected}}</p> -->
+                </div><img imgSrc="/Web/Downloaded images/edit.png">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="height:65px" class="marginTop20" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="footer" fxFlex="100" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="footerHeight marginRight35" fxLayoutGap="20px" fxLayoutAlign="end center" [fxShow]="true">
+        <div fxLayout="column wrap" class="navBarButton" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/disibility-module/nicotine">&#x2190; Back</button></div>
+        </div>
+        <div fxLayout="column wrap" class="summaryCheckMyPriceButton" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-button routerLink="/home/reccomended-options">Check My Price &#x2192;</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
