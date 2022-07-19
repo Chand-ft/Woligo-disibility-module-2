@@ -159,6 +159,16 @@ export class gov_employeeComponent {
         category: new FormControl(page.backendService.summaryForm.category),
         // state: new FormControl(''),
       });
+      if (page.backendService.summaryForm.govEmployee === 'Yes') {
+        page.selectedYes = true;
+      } else {
+        page.selectedYes = false;
+      }
+      if (page.backendService.summaryForm.govEmployee === 'No') {
+        page.selectedNo = true;
+      } else {
+        page.selectedNo = false;
+      }
 
       console.log('Gov Employee form', page.selectGovEmployeeForm);
       bh = this.sd_svZnZwujgFWZaWe7(bh);

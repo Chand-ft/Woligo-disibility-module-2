@@ -157,6 +157,16 @@ export class full_timeComponent {
           Validators.required,
         ]),
       });
+      if (page.backendService.summaryForm.fullTime === 'Yes') {
+        page.selectedYes = true;
+      } else {
+        page.selectedYes = false;
+      }
+      if (page.backendService.summaryForm.fullTime === 'No') {
+        page.selectedNo = true;
+      } else {
+        page.selectedNo = false;
+      }
 
       console.log('Full Time form', page.selectFullTimeForm);
       //appendnew_next_sd_vQSio3AzkUEupBzl

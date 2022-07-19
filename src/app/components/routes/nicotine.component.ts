@@ -157,6 +157,16 @@ export class nicotineComponent {
           Validators.required,
         ]),
       });
+      if (page.backendService.summaryForm.nicotine === 'Yes') {
+        page.selectedYes = true;
+      } else {
+        page.selectedYes = false;
+      }
+      if (page.backendService.summaryForm.nicotine === 'No') {
+        page.selectedNo = true;
+      } else {
+        page.selectedNo = false;
+      }
 
       console.log('Full Time form', page.selectNicotineForm);
       //appendnew_next_sd_RJo8KuYTztIetSMO
