@@ -137,12 +137,14 @@ export class date_pickerComponent {
       const page = this.page;
       page.dateOfBirth = new FormGroup({
         // dob: new FormControl('', [Validators.required])
-        dob: new FormControl(null, [
+        dob: new FormControl(page.backendService.summaryForm.dob, [
           NgxAgeValidator(18, 60.5),
           Validators.required,
         ]),
       });
       console.log('Date', page.dateOfBirth);
+      console.log('on Init object', page.backendService.summaryForm.dob);
+
       bh = this.sd_zsYDmTwY7m8DYVGf(bh);
       //appendnew_next_sd_aGsmQfCbZIBnsI0r
       return bh;
@@ -189,9 +191,9 @@ export class date_pickerComponent {
       // (populate service object)inside the formData, navigate to the "dob" key and put the user input inside
       page.formData.dob = page.dateOfBirth.value.dob;
       // log the updated service form
-      console.log('backend object', page.backendService.summaryForm);
+      // console.log("log form backend object", page.backendService.summaryForm);
 
-      console.log('testing', page.dateOfBirth.controls.dob.hasError('tooOld'));
+      // console.log("testing", page.dateOfBirth.controls.dob.hasError('tooOld'));
 
       //appendnew_next_sd_giBh7k3T5oVFyrgm
       return bh;

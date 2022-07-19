@@ -182,10 +182,34 @@ export class genderComponent {
   sd_cq3M5RpBZgzazVi6(bh) {
     try {
       const page = this.page;
+      if (page.backendService.summaryForm.maternity == null) {
+        page.backendService.summaryForm.maternity == 'No';
+      }
+
       page.genderForm = new FormGroup({
-        maternity: new FormControl('No', [Validators.required]),
-        gender: new FormControl('', [Validators.required]),
+        maternity: new FormControl(page.backendService.summaryForm.maternity, [
+          Validators.required,
+        ]),
+        gender: new FormControl(page.backendService.summaryForm.gender, [
+          Validators.required,
+        ]),
       });
+
+      // console.log("on Init object", page.backendService.summaryForm);
+      // console.log("on Init", page.backendService.summaryForm.gender);
+      console.log('on Init', page.backendService.summaryForm.maternity);
+
+      if (page.backendService.summaryForm.gender === 'Male') {
+        page.selectedMale = true;
+      } else {
+        page.selectedMale = false;
+      }
+
+      if (page.backendService.summaryForm.gender === 'Female') {
+        page.selectedFemale = true;
+      } else {
+        page.selectedFemale = false;
+      }
       //appendnew_next_sd_cq3M5RpBZgzazVi6
       return bh;
     } catch (e) {
@@ -238,7 +262,7 @@ export class genderComponent {
       page.formData.maternity = page.genderForm.value.maternity;
 
       // log the updated service form
-      console.log('backend object', page.backendService.summaryForm);
+      // console.log("backend object", page.backendService.summaryForm);
       //appendnew_next_sd_3sRNNb8X1sew8Rd0
       return bh;
     } catch (e) {

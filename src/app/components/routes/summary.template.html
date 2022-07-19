@@ -59,7 +59,7 @@
       </div>
       <div fxLayout="row wrap" class="marginBottom50 fullWidth" fxLayoutAlign="center stretch" [fxShow]="true">
         <div fxLayout="column wrap" fxFlex="80" fxLayoutGap="20px" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" class="whiteBoxForSummary fullWidth" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let item of page.items">
+          <div fxLayout="row wrap" class="whiteBoxForSummary fullWidth" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let item of page.items" routerLink="{{item.link}}">
             <div fxLayout="column wrap" fxFlex="50" fxLayoutAlign="start stretch" [fxShow]="true">
               <div class="summaryMarginRight">
                 <p class="greyText">{{item.category}}</p>

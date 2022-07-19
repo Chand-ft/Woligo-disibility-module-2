@@ -12,6 +12,13 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import {
+  FormControl,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+} from '@angular/forms'; //_splitter_
+import { disibility_module_summary_objectService } from 'app/services/disibility_module_summary_object/disibility_module_summary_object.service'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { dialogBoxComponent } from '../extras/dialogBox.component'; //_splitter_
 //append_imports_end
@@ -96,11 +103,35 @@ export class four_iconsComponent {
     try {
       this.page.items = [];
       this.page.disabilityInsuranceSelected = false;
-      bh = this.sd_DiYhXXTZydTRg0Pu(bh);
+      bh = this.sd_W0HEhrwdzWaOc34E(bh);
       //appendnew_next_sd_CyLyTFgB5NLqWyEP
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_CyLyTFgB5NLqWyEP');
+    }
+  }
+
+  sd_W0HEhrwdzWaOc34E(bh) {
+    try {
+      this.page.FG = FormGroup;
+      bh = this.sd_wkIPh5JUIzdSXzRS(bh);
+      //appendnew_next_sd_W0HEhrwdzWaOc34E
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_W0HEhrwdzWaOc34E');
+    }
+  }
+
+  sd_wkIPh5JUIzdSXzRS(bh) {
+    try {
+      this.page.backendService = this.__page_injector__.get(
+        disibility_module_summary_objectService
+      );
+      bh = this.sd_DiYhXXTZydTRg0Pu(bh);
+      //appendnew_next_sd_wkIPh5JUIzdSXzRS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_wkIPh5JUIzdSXzRS');
     }
   }
 
@@ -125,6 +156,11 @@ export class four_iconsComponent {
           text: 'Discount Plans',
         },
       ];
+
+      if (page.backendService.summaryForm.insuranceType != null) {
+        this.toggleDisabilityInsuranceImage();
+      }
+
       //appendnew_next_sd_DiYhXXTZydTRg0Pu
       return bh;
     } catch (e) {
@@ -141,6 +177,8 @@ export class four_iconsComponent {
       } else {
         page.disabilityInsuranceSelected = true;
         this.openDialog();
+        page.backendService.summaryForm.insuranceType =
+          page.disabilityInsuranceSelected;
       }
 
       //appendnew_next_sd_VVV52rxoz4BtSh3w

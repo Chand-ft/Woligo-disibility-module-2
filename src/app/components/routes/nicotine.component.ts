@@ -153,7 +153,9 @@ export class nicotineComponent {
     try {
       const page = this.page;
       page.selectNicotineForm = new FormGroup({
-        nicotine: new FormControl('', [Validators.required]),
+        nicotine: new FormControl(page.backendService.summaryForm.nicotine, [
+          Validators.required,
+        ]),
       });
 
       console.log('Full Time form', page.selectNicotineForm);

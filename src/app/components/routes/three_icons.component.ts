@@ -12,6 +12,13 @@ import {
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { __NEU_ServiceInvokerService__ } from 'app/n-services/service-caller.service'; //_splitter_
+import {
+  FormControl,
+  ReactiveFormsModule,
+  FormGroup,
+  Validators,
+} from '@angular/forms'; //_splitter_
+import { disibility_module_summary_objectService } from 'app/services/disibility_module_summary_object/disibility_module_summary_object.service'; //_splitter_
 import { MatDialog } from '@angular/material/dialog'; //_splitter_
 import { dialogBoxComponent } from '../extras/dialogBox.component'; //_splitter_
 //append_imports_end
@@ -96,11 +103,35 @@ export class three_iconsComponent {
     try {
       this.page.items = [];
       this.page.familySelected = false;
-      bh = this.sd_YSH5ZXtdOs8bUJcB(bh);
+      bh = this.sd_kkFPJTQYwtBSRc78(bh);
       //appendnew_next_sd_kCl4j3VAFVjnalHa
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_kCl4j3VAFVjnalHa');
+    }
+  }
+
+  sd_kkFPJTQYwtBSRc78(bh) {
+    try {
+      this.page.FG = FormGroup;
+      bh = this.sd_6D9SEjBYTgFhrw1u(bh);
+      //appendnew_next_sd_kkFPJTQYwtBSRc78
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_kkFPJTQYwtBSRc78');
+    }
+  }
+
+  sd_6D9SEjBYTgFhrw1u(bh) {
+    try {
+      this.page.backendService = this.__page_injector__.get(
+        disibility_module_summary_objectService
+      );
+      bh = this.sd_YSH5ZXtdOs8bUJcB(bh);
+      //appendnew_next_sd_6D9SEjBYTgFhrw1u
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6D9SEjBYTgFhrw1u');
     }
   }
 
@@ -123,6 +154,16 @@ export class three_iconsComponent {
           text: 'I need to protect my business',
         },
       ];
+
+      if (page.backendService.summaryForm.protectionType != null) {
+        this.toggleFamilyImage();
+      }
+      //else{
+      //   page.backendService.summaryForm.protectionType = new FormGroup({
+      //   disability: new FormControl('',[Validators.required])
+      //   // lastName: new FormControl(''),
+      // });
+      // }
       //appendnew_next_sd_YSH5ZXtdOs8bUJcB
       return bh;
     } catch (e) {
@@ -139,6 +180,7 @@ export class three_iconsComponent {
       } else {
         page.familySelected = true;
         this.openDialog();
+        page.backendService.summaryForm.protectionType = page.familySelected;
       }
       //appendnew_next_sd_jPb3w1v0J7URJwMp
       return bh;

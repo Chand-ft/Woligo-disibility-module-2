@@ -95,41 +95,61 @@ export class summaryComponent {
       // page.formData.dob = "02/02/1985".... //Can be deleted
       // page.backendService.form
       page.items = [
-        { category: 'Protection type', selected: 'Protect income or family' },
-        { category: 'Insurance type', selected: 'Disability' },
+        {
+          category: 'Protection type',
+          selected: 'Protect income or family',
+          link: '/home/disibility-module/nicotine',
+        },
+        {
+          category: 'Insurance type',
+          selected: 'Disability',
+          link: '/home/disibility-module/four',
+        },
         {
           category: 'Date of birth',
           selected: page.backendService.summaryForm.dob,
+          link: '/home/disibility-module/date',
         },
         {
           category: 'Gender at birth',
           selected: page.backendService.summaryForm.gender,
+          link: '/home/disibility-module/gender',
         },
         {
           category: 'Maternity leave coverage?',
           selected: page.backendService.summaryForm.maternity,
+          link: '/home/disibility-module/gender',
         },
-        { category: 'State', selected: page.backendService.summaryForm.state },
+        {
+          category: 'State',
+          selected: page.backendService.summaryForm.state,
+          link: '/home/disibility-module/province',
+        },
         {
           category: 'Occupation category',
           selected: page.backendService.summaryForm.occupation,
+          link: '/home/disibility-module/occupation',
         },
         {
           category:
             'Are you employed full time and work at least 30 hours per week?',
           selected: page.backendService.summaryForm.fullTime,
+          link: '/home/disibility-module/full-time',
         },
         {
           category: 'Monthly Gross Income',
           selected: '$ ' + page.backendService.summaryForm.grossIncome,
+          link: '/home/disibility-module/gross',
         },
         {
           category: 'Government employee',
           selected: page.backendService.summaryForm.govEmployee,
+          link: '/home/disibility-module/gov',
         },
         {
           category: 'Do you use nicotine',
           selected: page.backendService.summaryForm.nicotine,
+          link: '/home/disibility-module/nicotine',
         },
       ];
 

@@ -125,11 +125,14 @@ export class gross_incomeComponent {
     try {
       const page = this.page;
       page.selectGrossIncomeForm = new FormGroup({
-        grossIncome: new FormControl('', [
-          Validators.required,
-          Validators.min(1200),
-          Validators.pattern('^[0-9]*$'),
-        ]),
+        grossIncome: new FormControl(
+          page.backendService.summaryForm.grossIncome,
+          [
+            Validators.required,
+            Validators.min(1200),
+            Validators.pattern('^[0-9]*$'),
+          ]
+        ),
       });
 
       console.log('Gross Income form', page.selectGrossIncomeForm);

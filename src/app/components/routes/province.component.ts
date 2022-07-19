@@ -123,7 +123,9 @@ export class provinceComponent {
     try {
       const page = this.page;
       page.selectStateForm = new FormGroup({
-        state: new FormControl('', [Validators.required]),
+        state: new FormControl(page.backendService.summaryForm.state, [
+          Validators.required,
+        ]),
       });
 
       console.log('State form', page.selectStateForm);

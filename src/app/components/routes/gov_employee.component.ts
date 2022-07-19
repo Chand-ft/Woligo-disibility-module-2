@@ -152,8 +152,11 @@ export class gov_employeeComponent {
     try {
       const page = this.page;
       page.selectGovEmployeeForm = new FormGroup({
-        govEmployee: new FormControl('', [Validators.required]),
-        category: new FormControl(''),
+        govEmployee: new FormControl(
+          page.backendService.summaryForm.govEmployee,
+          [Validators.required]
+        ),
+        category: new FormControl(page.backendService.summaryForm.category),
         // state: new FormControl(''),
       });
 

@@ -4,9 +4,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class disibility_module_summary_objectService {
 summaryForm =    { 
+    "protectionType":null,
+    "insuranceType":null,
     "dob": "",
     "gender":"",
-    "maternity":"",
+    "maternity":"No",
     "state":"",
     "occupation":"",
     "fullTime":"",

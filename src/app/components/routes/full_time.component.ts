@@ -153,7 +153,9 @@ export class full_timeComponent {
     try {
       const page = this.page;
       page.selectFullTimeForm = new FormGroup({
-        fullTime: new FormControl('', [Validators.required]),
+        fullTime: new FormControl(page.backendService.summaryForm.fullTime, [
+          Validators.required,
+        ]),
       });
 
       console.log('Full Time form', page.selectFullTimeForm);

@@ -123,7 +123,10 @@ export class occupationComponent {
     try {
       const page = this.page;
       page.selectOccupationForm = new FormGroup({
-        occupation: new FormControl('', [Validators.required]),
+        occupation: new FormControl(
+          page.backendService.summaryForm.occupation,
+          [Validators.required]
+        ),
       });
 
       console.log('Occupation form', page.selectOccupationForm);
